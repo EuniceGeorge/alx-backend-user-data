@@ -14,7 +14,7 @@ class Auth(object):
         if path is None or excluded_paths is None or excluded_paths == []:
             return True
 
-        #check if path is excluded
+        """check if path is excluded"""
         for path in excluded_paths:
             if path.endswith('*') and path.startswith(path[:-1]):
                 return False
