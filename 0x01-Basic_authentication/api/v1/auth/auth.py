@@ -10,13 +10,16 @@ class Auth(object):
     """manage API"""
 
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
-        """method that returns boolean
-        Args:
-            path (str): The path to check.
-            excluded_paths (List[str]): A list of paths
-        Returns:
-            bool: Currently always returns False."""
-        return False
+        """method that returns boolean"""
+        if path is None or excluded_paths is None or excluded_paths == []:
+            return True
+
+        #check if path is excluded
+        for path in excluded_paths:
+            if path.endswith('*') and path.startswith(path[:-1]):
+                return False
+
+        return True
 
     def authorization_header(self, request=None) -> str:
         """authorizedmethod that returns boolean"""
