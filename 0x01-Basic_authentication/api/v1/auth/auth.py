@@ -3,6 +3,7 @@
 
 """manage API"""
 from flask import request
+from typing import List
 
 
 class Auth(object):
@@ -17,6 +18,6 @@ class Auth(object):
             return None
 
     def current_user(self, request=None) -> TypeVar('User'):
-        """current user method"""
+        """current_user method"""
         if request is None:
             return None
