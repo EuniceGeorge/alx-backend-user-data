@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""manage API"""
+"""manage API Authentication"""
 from flask import request
 from typing import List
 
 
 class Auth(object):
     """manage API"""
+
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """method that returns boolean
         Args:
@@ -24,5 +25,4 @@ class Auth(object):
 
     def current_user(self, request=None) -> TypeVar('User'):
         """current_user method"""
-        if request is None:
-            return None
+        return None
