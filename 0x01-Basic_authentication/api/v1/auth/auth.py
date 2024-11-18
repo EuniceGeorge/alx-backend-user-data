@@ -30,3 +30,8 @@ class Auth(object):
     def current_user(self, request=None) -> TypeVar('User'):
         """current_user method"""
         return None
+
+
+class BasicAuth(Auth):
+    """inheritance"""
+    pass
