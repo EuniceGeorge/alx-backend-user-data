@@ -34,4 +34,3 @@ class Auth(object):
 
 class BasicAuth(Auth):
     """inheritance"""
-    pass
